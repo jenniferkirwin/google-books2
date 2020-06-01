@@ -52,15 +52,6 @@ module.exports = {
 
       const test = [];
 
-      // snapshot.forEach(doc => {
-      //   test.push(doc);
-      //   console.log(test);
-      // });
-
-      // // res.status(200).json(doc);
-
-
-
       snapshot.forEach(doc => {
         // console.log(doc.id, '=>', doc.data());
         test.push(doc.data())
@@ -68,7 +59,6 @@ module.exports = {
       });
 
       res.status(200).json(test)
-
       
     })
     // .then(() => {res.sendStatus(200);})
