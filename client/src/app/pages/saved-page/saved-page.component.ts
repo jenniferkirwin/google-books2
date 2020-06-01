@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FavoritesService, FavoritesResponse } from '../../services/favorites.service';
 
 @Component({
