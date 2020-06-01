@@ -10,6 +10,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SavedPageComponent } from './pages/saved-page/saved-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 // Materialize Components
 import { MatMenuModule } from '@angular/material/menu';
@@ -20,7 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
-import { PageHeaderComponent } from './page-header/page-header.component';
+
+
 
 @NgModule({
   declarations: [

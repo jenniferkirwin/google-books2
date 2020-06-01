@@ -1,1 +1,7 @@
-<p>searchbar works!</p>
+<form class="example-form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+  <mat-form-field class="example-full-width">
+    <mat-label>Search for a Book</mat-label>
+    <input type="text" matInput placeholder="Search a Book">
+  </mat-form-field>
+  <button class="button" type="submit">Search Book</button>
+</form>
