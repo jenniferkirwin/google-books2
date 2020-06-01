@@ -2,8 +2,10 @@
 
 nav {
   @include mat-elevation(2);
-  margin-bottom: 25px;
-  // border-bottom: 1px solid #B5838D;
+  // margin-bottom: 25px;
+  // // border-bottom: 1px solid #B5838D;
+  position: relative;
+  
 }
 
 .nav-spacer {

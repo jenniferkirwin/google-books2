@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { catchError, retry } from 'rxjs/operators';
 
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+
+export interface FavoritesResponse {
+  id: string,
+  title: string,
+  authors: Array<string>,
+  thumbnail: string,
+  textSnippet: string,
+  infoLink: string,
+  favorite: boolean
+}
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +25,23 @@ export class FavoritesService {
 
   constructor(private http: HttpClient) { }
 
-  getConfigResponse(): Observable<HttpResponse<any>> {
-    return this.http.get<any>(
-      this.configUrl, { observe: 'response' });
+  // getConfigResponse(): Observable<HttpResponse<FavoritesResponse>> {
+  //   return this.http.get<FavoritesResponse>(
+  //     this.configUrl, { observe: 'response' });
+  // }
+
+  getConfigResponse() {
+    return this.http.get<FavoritesResponse>(this.configUrl)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  getSeaches(seachedBook:string) {
+    return this.http.get<FavoritesResponse>(`${this.configUrl}search/${seachedBook}`)
+    .pipe(
+      catchError(this.handleError)
+    );
   }
 
   private handleError(error: HttpErrorResponse) {

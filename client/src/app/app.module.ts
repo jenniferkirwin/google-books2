@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { SavedPageComponent } from './pages/saved-page/saved-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 // Materialize Components
 import { MatMenuModule } from '@angular/material/menu';
@@ -20,6 +23,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +32,15 @@ import { MatTableModule } from '@angular/material/table';
     NavigationComponent,
     SearchbarComponent,
     SavedPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    PageHeaderComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     // Start Materialize Components
     MatMenuModule,
     MatButtonModule,
