@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FavoritesService } from '../../services/favorites.service';
+import { FavoritesService, FavoritesResponse } from '../../services/favorites.service';
 
 @Component({
   selector: 'app-saved-page',
@@ -11,22 +11,25 @@ import { FavoritesService } from '../../services/favorites.service';
 export class SavedPageComponent implements OnInit {
 
   error: any;
-  public books: any;
+  public favBooks: FavoritesResponse[];
+  public pageHeader: string;
 
   constructor(private favoritesService: FavoritesService) { }
 
   showConfig() {
     this.favoritesService.getConfigResponse()
       .subscribe(
-        ({ items }: any) => {
-          this.books = [...items];
-          console.log(items);
+        (response: any) => {
+          this.favBooks = response;
+          console.log(response);
         },
         error => this.error = error
       );
   }
 
   ngOnInit(): void {
+    this.showConfig();
+    this.pageHeader = 'Saved Books';
   }
 
 }

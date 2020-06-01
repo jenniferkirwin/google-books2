@@ -45,16 +45,33 @@ module.exports = {
     .then(snapshot => {
 
       if (snapshot.empty) {
-        console.log('No matching documents.');
+        // console.log('No matching documents.');
+        res.status(200).json({})
         return;
       }
 
+      const test = [];
+
+      // snapshot.forEach(doc => {
+      //   test.push(doc);
+      //   console.log(test);
+      // });
+
+      // // res.status(200).json(doc);
+
+
+
       snapshot.forEach(doc => {
-        console.log(doc.id, '=>', doc.data());
+        // console.log(doc.id, '=>', doc.data());
+        test.push(doc.data())
+        console.log(test)
       });
+
+      res.status(200).json(test)
+
       
     })
-    .then(() => {res.sendStatus(200);})
+    // .then(() => {res.sendStatus(200);})
     .catch(err => {
       console.log('Error getting documents', err);
     });

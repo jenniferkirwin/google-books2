@@ -1,3 +1,6 @@
-<p>saved-page works!</p>
-<app-card-item></app-card-item>
-<button (click)="showConfig()">get</button>
+<app-page-header [pageHeader]="pageHeader"></app-page-header>
+
+<div class="container-fluid">
+  <app-card-item [listBooks]="favBooks"></app-card-item>
+</div>
+

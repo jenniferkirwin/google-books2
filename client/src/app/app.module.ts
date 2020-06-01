@@ -20,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatTableModule } from '@angular/material/table';
     NavigationComponent,
     SearchbarComponent,
     SavedPageComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    PageHeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageComponent implements OnInit {
 
+  public pageHeader: string;
+  
   constructor() { }
 
   ngOnInit(): void {
+
+    this.pageHeader = 'Search Books';
+
   }
 
 }
