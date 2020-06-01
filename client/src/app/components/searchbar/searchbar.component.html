@@ -1,7 +1,26 @@
-<form class="example-form" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+<!-- <form class="example-form" ng-submit="onSubmit()">
   <mat-form-field class="example-full-width">
     <mat-label>Search for a Book</mat-label>
     <input type="text" matInput placeholder="Search a Book">
   </mat-form-field>
-  <button class="button" type="submit">Search Book</button>
-</form>
+  <button class="button" type="button" click="onSubmit()">Search Book</button>
+</form> -->
+
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #searchBar="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name"
+             required
+             [(ngModel)]="searchQuery" name="name"
+             #name="ngModel">
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        Search for a book!
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!searchBar.form.valid">Submit</button>
+
+  </form>
+</div>
