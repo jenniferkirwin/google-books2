@@ -11,7 +11,7 @@ export class SearchbarComponent implements OnInit {
 
   searchQuery: string;
   error: any;
-  public searchedBooks: FavoritesResponse[];
+  public searchedBooks: FavoritesResponse[] = [];
 
   constructor(private favoritesService: FavoritesService) { }
 

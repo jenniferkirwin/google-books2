@@ -10,7 +10,7 @@ import { FavoritesService, FavoritesResponse } from '../../services/favorites.se
 export class SavedPageComponent implements OnInit {
 
   error: any;
-  public favBooks: FavoritesResponse[];
+  public favBooks: FavoritesResponse[] = [];
   public pageHeader: string;
 
   constructor(private favoritesService: FavoritesService) { }

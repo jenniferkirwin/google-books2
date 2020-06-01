@@ -14,10 +14,6 @@
              required
              [(ngModel)]="searchQuery" name="name"
              #name="ngModel">
-      <div [hidden]="name.valid || name.pristine"
-           class="alert alert-danger">
-        Search for a book!
-      </div>
     </div>
 
     <button type="submit" class="btn btn-success" [disabled]="!searchBar.form.valid">Submit</button>
